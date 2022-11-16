@@ -6,3 +6,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Content {
+  id             Int     @id @default(autoincrement())
+  title          String  @db.VarChar(20)
+  startDate      String  @db.VarChar(20)
+  endDate        String  @db.VarChar(20)
+  tag            String  @db.VarChar(20)
+  location       String  @db.VarChar(20)
+  locationDetail String  @db.VarChar(20)
+  openDay        String  @db.VarChar(20)
+  closeDay       String  @db.VarChar(20)
+  runTime        String  @db.VarChar(40)
+  age            Int
+  detailInfo     String? @db.VarChar(200)
+  posterImage    String  @db.VarChar(100)
+  detailImage    String  @db.VarChar(100)
+}
