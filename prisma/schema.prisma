@@ -22,4 +22,13 @@ model Content {
   detailInfo     String? @db.VarChar(200)
   posterImage    String  @db.VarChar(100)
   detailImage    String  @db.VarChar(100)
+  price_id       Int
+  Price          Price   @relation(fields: [price_id], references: [id], onDelete: Cascade, map: "content_price_id_fk")
+}
+
+model Price {
+  id      Int       @id @default(autoincrement())
+  kid     Int
+  adult   Int
+  Content Content[]
 }
