@@ -7,6 +7,8 @@ const getDetailContent = async(contentId:number) => {
             id: contentId
         }
     });
+    data.startDate=data.startDate.replace(/-/gi,".");
+    data.endDate=data.endDate.replace(/-/gi, ".");
     return data;
 };
 
