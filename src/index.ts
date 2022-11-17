@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(express.json());
 
 
-app.use("/api", router); // use -> 모든 요청
+app.use("/", router); // use -> 모든 요청
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.send("초기 세팅 등록");
