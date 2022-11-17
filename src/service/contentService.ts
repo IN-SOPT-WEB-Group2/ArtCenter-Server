@@ -1,14 +1,14 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-const getDetailContent = async(userId:number) => {
+const getDetailContent = async(contentId:number) => {
     const data= await prisma.Content.findUnique({
         where: {
-            id: userId
+            id: contentId
         }
     });
     return data;
-}
+};
 
 const contentService = {
     getDetailContent

@@ -9,20 +9,21 @@ datasource db {
 
 model Content {
   id             Int     @id @default(autoincrement())
-  title          String  @db.VarChar(20)
-  startDate      String  @db.VarChar(20)
-  endDate        String  @db.VarChar(20)
-  tag            String  @db.VarChar(20)
-  location       String  @db.VarChar(20)
-  locationDetail String  @db.VarChar(20)
-  openDay        String  @db.VarChar(20)
-  closeDay       String  @db.VarChar(20)
-  runTime        String  @db.VarChar(40)
-  age            Int
+  title          String  @db.VarChar(100)
+  startDate      String? @db.VarChar(20)
+  endDate        String? @db.VarChar(20)
+  tag            String? @db.VarChar(20)
+  location       String? @db.VarChar(20)
+  locationDetail String? @db.VarChar(20)
+  openDay        String? @db.VarChar(20)
+  closeDay       String? @db.VarChar(20)
+  runTime        String? @db.VarChar(40)
+  age            String? @db.VarChar(40)
   detailInfo     String? @db.VarChar(2000)
-  posterImage    String  @db.VarChar(100)
-  detailImage    String  @db.VarChar(100)
-  price          String  @db.VarChar(1000)
+  posterImage    String? @db.VarChar(100)
+  detailImage    String? @db.VarChar(100)
+  price          String? @db.VarChar(1000)
+  openTime       String? @db.VarChar(100)
   Book           Book[]
 }
 
