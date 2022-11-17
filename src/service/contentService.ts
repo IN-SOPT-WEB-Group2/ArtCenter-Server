@@ -12,8 +12,15 @@ const getDetailContent = async(contentId:number) => {
     return data;
 };
 
+const getAllContent = async() => {
+    const data = await prisma.Content.findMany();
+    console.log(data);
+    return data;
+}
+
 const contentService = {
-    getDetailContent
+    getDetailContent,
+    getAllContent
 };
 
 export default contentService;

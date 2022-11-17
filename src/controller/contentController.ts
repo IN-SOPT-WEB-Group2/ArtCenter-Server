@@ -9,9 +9,17 @@ const getDetailContent = async (req: Request, res: Response) => {
     return res.status(200).json({ status: 200, message: "상세 컨텐츠 가져오기 성공", data });
 };
 
+const getAllContent = async (req:Request, res:Response)=>{
+    const data = await contentService.getAllContent();
+    if(!data)
+        return res.status(404).json({status:404, message:"전체 컨텐츠 가져오기 실패"});
+    return res.status(200).json({ status: 200, message: "전체 컨텐츠 가져오기 성공", data });
+};
+
 
 const contentController = {
     getDetailContent,
+    getAllContent
 };
 
 export default contentController;
