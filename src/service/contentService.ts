@@ -1,11 +1,8 @@
+import date from "../interface/DateFormat";
+
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-interface date{
-    year:string,
-    month:string,
-    day:string
-}
 
 const parseDate=async(ddate: String)=>{
     const date=ddate.replace(/-/gi,".");
