@@ -16,7 +16,6 @@ const allContent = async() => {
         data[i].startDate = await parseDate(data[i].startDate);
         data[i].endDate=await parseDate(data[i].endDate);
     }
-    console.log("메인페이지 라우터 ")
     return data;
 }
 
@@ -31,8 +30,6 @@ const getAllContent = async() => {
         data[i].StartDate=StartDateObject;
         data[i].EndDate=EndDateObject;
         }
-    // console.log("전체일정 라우터 ")
-    console.log(data[1]);
     return data;
 }
 
