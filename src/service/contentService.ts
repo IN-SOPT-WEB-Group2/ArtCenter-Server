@@ -37,7 +37,7 @@ const getAllContent = async() => {
 const getDayContent=async(date:String)=>{
     const data=await prisma.Content.findMany({
         where:{
-            startDate: {lt:date+"1"},
+            startDate: {lte:date},
             endDate: {gte:date}
         }
     });
