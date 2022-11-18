@@ -36,6 +36,17 @@ const getAllContent = async() => {
     return data;
 }
 
+//켈린더 페이지 해당 날짜 일정 보기
+const getDayContent=async(date:String)=>{
+    const data=await prisma.Content.findMany({
+        where:{
+            startDate: {lt:date+"1"},
+            endDate: {gte:date}
+        }
+    });
+    return data;
+}
+
 //상세 컨텐츠 보기 
 const getDetailContent = async(contentId:number) => {
     const data= await prisma.Content.findUnique({
@@ -51,6 +62,7 @@ const getDetailContent = async(contentId:number) => {
 const contentService = {
     allContent,
     getAllContent,
+    getDayContent,
     getDetailContent
 };
 
