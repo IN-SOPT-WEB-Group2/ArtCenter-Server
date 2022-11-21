@@ -1,3 +1,4 @@
+import { transformDocument } from "@prisma/client/runtime";
 import date from "../interface/DateFormat";
 
 const { PrismaClient } = require("@prisma/client");
@@ -39,8 +40,19 @@ const getDayContent=async(date:String)=>{
         where:{
             startDate: {lte:date},
             endDate: {gte:date}
+        },
+        select:{
+            id:true,
+            title:true,
+            startDate:true,
+            endDate:true,
+            tag:true,
+            locationDetail:true,
+            posterImage:true,
+            openTime:true
         }
     });
+    
     return data;
 }
 
